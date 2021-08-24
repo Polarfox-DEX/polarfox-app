@@ -5,7 +5,7 @@ import { hex } from 'wcag-contrast'
 import { Token } from '@polarfox/sdk'
 
 async function getColorFromToken(token: Token): Promise<string | null> {
-  const path = `https://raw.githubusercontent.com/Polarfox-DEX/polarfox-token-lists/master/43113/token-logos/${token.address}.png`
+  const path = `https://raw.githubusercontent.com/Polarfox-DEX/polarfox-token-lists/avalanche-token-list/43114/token-logos/${token.address}.png`
 
   return Vibrant.from(path)
     .getPalette()
