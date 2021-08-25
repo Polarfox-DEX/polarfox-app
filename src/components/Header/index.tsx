@@ -245,20 +245,12 @@ const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.AVALANCHE]: 'Avalanche'
 }
 
-const EARN_LINKS: {
+const AKITA_LINKS: {
   linkRef: string
   linkTitle: string
 }[] = [
-  { linkRef: '/pfx', linkTitle: 'PFX' },
-  { linkRef: '/gakita', linkTitle: 'gAKITA' }
-]
-
-const VOTE_LINKS: {
-  linkRef: string
-  linkTitle: string
-}[] = [
-  { linkRef: '/vote-pfx', linkTitle: 'PFX Governance' },
-  { linkRef: '/vote-gakita', linkTitle: 'AKITA Governance' }
+  { linkRef: '/vote-gakita', linkTitle: 'Vote' },
+  { linkRef: '/gakita', linkTitle: 'Earn' }
 ]
 
 export default function Header() {
@@ -303,6 +295,12 @@ export default function Header() {
           <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
             {t('swap')}
           </StyledNavLink>
+          <StyledNavLink id={`stake-nav-link`} to={'/pfx'}>
+            {t('earn')}
+          </StyledNavLink>
+          <StyledNavLink id={`stake-nav-link`} to={'/vote-pfx'}>
+            {t('vote')}
+          </StyledNavLink>
           <StyledNavLink
             id={`pool-nav-link`}
             to={'/pool'}
@@ -316,8 +314,7 @@ export default function Header() {
           >
             {t('pool')}
           </StyledNavLink>
-          <MenuLink links={EARN_LINKS} label="Earn" flyoutPositionDesktop="-1.1" flyoutPositionMobile="-1.1" />
-          <MenuLink links={VOTE_LINKS} label="Vote" flyoutPositionDesktop="-2.2" flyoutPositionMobile="-1" />
+          <MenuLink links={AKITA_LINKS} label="AKITA" flyoutPositionDesktop="0.25" flyoutPositionMobile="0.5" />
           <StyledExternalLink id={`info-nav-link`} href={ANALYTICS_PAGE}>
             Charts <span style={{ fontSize: '11px' }}>↗</span>
           </StyledExternalLink>
